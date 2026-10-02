@@ -1,0 +1,13 @@
+sample	coverage	error_rate	contam_frac	plasmid_paralogs	seed	split
+S01	12	0.004	0.00	4	101	train
+S02	20	0.003	0.10	4	102	train
+S03	30	0.002	0.00	6	103	train
+S04	8	0.005	0.05	4	104	train
+S05	40	0.003	0.15	4	105	train
+S06	15	0.006	0.00	8	106	train
+S07	25	0.004	0.08	4	107	train
+S08	10	0.003	0.12	6	108	train
+S09	35	0.005	0.05	4	109	train
+S10	18	0.004	0.00	6	110	train
+T01	16	0.004	0.10	5	201	test
+T02	28	0.003	0.05	5	202	test
