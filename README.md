@@ -3,6 +3,7 @@
 [![CI](https://github.com/syrymovmukhammed/variant-ml-filter/actions/workflows/main.yml/badge.svg)](https://github.com/syrymovmukhammed/variant-ml-filter/actions/workflows/main.yml)
 ![python](https://img.shields.io/badge/python-3.12-blue.svg)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-RF%20%7C%20LogReg-orange.svg)
+![license](https://img.shields.io/badge/license-MIT-green.svg)
 
 A Random Forest and a Logistic Regression learn to tell **real variants from
 artefacts** in bacterial WGS calls, using the metrics bcftools writes into the
@@ -10,6 +11,10 @@ VCF (QUAL, depth, mapping quality, allele fraction, strand and position bias…)
 The models are compared head-to-head with the GATK-style hard filter of
 [wgs-variant-pipeline](https://github.com/syrymovmukhammed/wgs-variant-pipeline) on isolates they never saw, and the winner is saved as a reusable
 VCF filter.
+
+![ROC and PR curves](showcase/roc_pr_test.png)
+
+*ROC and precision–recall curves on the two held-out isolates. Both models sit at AUC 0.999; the cross marks the GATK-style hard filter, which pays for its precision with recall.*
 
 ## Where the labels come from
 
@@ -119,6 +124,7 @@ variant-ml-filter/
 │   ├── apply_filter.py       # model as a VCF filter (ML_PROB / ML_FAIL)
 │   └── make_report.py
 ├── tests/check_outputs.sh
+├── showcase/                 # curated figures, kept in git
 └── requirements.txt / environment.yml
 ```
 
@@ -129,3 +135,7 @@ Part of a three-repository set on bacterial WGS:
 - [wgs-variant-pipeline](https://github.com/syrymovmukhammed/wgs-variant-pipeline) — reads → BAM → VCF, bcftools + GATK, benchmarked against a truth set
 - [variant-ml-filter](https://github.com/syrymovmukhammed/variant-ml-filter) — Random Forest / Logistic Regression filter for false-positive calls
 - [popgen-vcf-analysis](https://github.com/syrymovmukhammed/popgen-vcf-analysis) — multi-sample VCF → SNP distances, PCA, clustering, NJ tree
+
+## License
+
+MIT — see [LICENSE](LICENSE).
